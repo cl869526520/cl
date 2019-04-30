@@ -5,14 +5,15 @@ import HomeContainer from "./components/tabbar/homeContainer.vue"
 import MemberContainer from "./components/tabbar/memberContainer.vue"
 import SearchContainer from "./components/tabbar/searchContainer.vue"
 import ShopcarContainer from "./components/tabbar/shopcarContainer.vue"
-
+import NewsList from "./components/news/NewsList.vue"
 var router = new VueRouter({
     routes: [
         { path: "/", redirect: '/home' },
         { path: "/home", component: HomeContainer },
         { path: "/member", component: MemberContainer },
         { path: "/shopcar", component: SearchContainer },
-        { path: "/search", component: ShopcarContainer }
+        { path: "/search", component: ShopcarContainer },
+        { path: '/home/newslist', component: NewsList }
     ],
     linkActiveClass: 'mui-active' //替换样式
 })
