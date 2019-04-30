@@ -5,6 +5,13 @@ import VueRouter from 'vue-router'
 
 Vue.use(VueRouter)
 
+import moment from 'moment'
+
+//定义全局过滤器
+Vue.filter("dataF", function(dataS, pattern = "YYYY-MM-DD HH:mm:ss") {
+    return moment(dataS).format(pattern)
+})
+
 import router from './router.js'
 
 import "./assets/mui-master/dist/css/mui.css"
