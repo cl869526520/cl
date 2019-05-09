@@ -1,7 +1,7 @@
 <template>
     <ul class="mui-table-view">
         <li class="mui-table-view-cell mui-media" v-for="itme in newslist" :key="itme.id">
-            <a href="javascript:;">
+            <router-link :to="'/home/newsinfo/'+itme.id">
                 <img class="mui-media-object mui-pull-left" :src="itme.img_url">
                 <div class="mui-media-body">
                     <h1>{{itme.title }}</h1>
@@ -10,7 +10,7 @@
                         <span>点击:{{itme.click}}次</span>
                     </p>
                 </div>
-            </a>
+            </router-link>
         </li>
     </ul>
 
@@ -28,7 +28,7 @@ export default {
     },
     methods: {
         getNewsList(){
-            this.$http.get("api/getnewslist").then(result => {
+            this.$http.get("/api/getnewslist").then(result => {
                 
                 
                 if(result.data.status === 0){
@@ -36,7 +36,7 @@ export default {
                 }else{
                     Toast('加载轮列表失败')
                 }
-                console.log(this.newslist);
+                // console.log(this.newslist);
             })
         }
     },

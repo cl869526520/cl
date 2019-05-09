@@ -5,6 +5,12 @@ import VueRouter from 'vue-router'
 
 Vue.use(VueRouter)
 
+//导入缩略图插件
+import VuePreview from 'vue-preview'
+
+Vue.use(VuePreview)
+
+
 import moment from 'moment'
 
 //定义全局过滤器
@@ -18,11 +24,19 @@ import "./assets/mui-master/dist/css/mui.css"
 
 import "./assets/mui-master/dist/css/icons-extra.css"
 
-import { Header, Swipe, SwipeItem } from 'mint-ui';
+import { Header, Swipe, SwipeItem, Button } from 'mint-ui';
 
-Vue.component(Header.name, Header);
-Vue.component(Swipe.name, Swipe);
-Vue.component(SwipeItem.name, SwipeItem);
+// Vue.component(Header.name, Header);
+// Vue.component(Swipe.name, Swipe);
+// Vue.component(SwipeItem.name, SwipeItem);
+// Vue.component(Button.name, Button);
+// import { Lazyload } from 'mint-ui';
+
+// Vue.use(Lazyload);
+
+import MintUI from 'mint-ui'
+Vue.use(MintUI)
+import 'mint-ui/lib/style.css'
 
 import axios from "axios";
 axios.defaults.baseURL = "http://www.liulongbin.top:3005";
