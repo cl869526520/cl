@@ -1,11 +1,8 @@
 <template>
     <div>
         <!-- 轮播图区 -->
-        <mt-swipe  :auto="4000">
-            <mt-swipe-item v-for="item in lunbotuList" :key="item.id">
-                <img :src="item.img" alt="">
-            </mt-swipe-item>
-        </mt-swipe>
+        <!-- 父传子设置自定义属性 -->
+        <swiper :lunbotuList="lunbotuList" :isfull="true"></swiper>
 
         <!-- 九宫格区域 -->
         <ul class="mui-table-view mui-grid-view mui-grid-9">
@@ -36,6 +33,7 @@
 
 <script>
 import { Toast } from 'mint-ui'
+import swiper from "../subcomponents/swiper.vue"
     export default {
         data() {
             return {
@@ -58,28 +56,14 @@ import { Toast } from 'mint-ui'
                 })
             }
         },
+        components:{
+            swiper
+        }
     }
 </script>
 
 <style lang="less" scoped>
-    .mint-swipe {
-        height: 200px;
-        .mint-swipe-item {
-            &:nth-child(1) {
-                background-color: red;
-            }
-            &:nth-child(2) {
-                background-color: yellowgreen;
-            }
-            &:nth-child(3) {
-                background-color: yellow;
-            }
-            img{
-                width: 100%;
-                height: 100%;
-            }
-        }
-    }
+    
     .mui-grid-view.mui-grid-9{
         background-color: #fff;
         border: 0;
