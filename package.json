@@ -13,7 +13,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "axios": "^0.18.0",
+    "axios": "^0.21.1",
     "babel-plugin-transform-remove-strict-mode": "^0.0.2",
     "bootstrap": "^3.3.7",
     "jquery": "^3.4.0",
